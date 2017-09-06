@@ -7,18 +7,22 @@
     * Change it to print `hello, world!` with a trailing newline.
 * Try your code in `ghci`, the Haskell interpreter:
 
-    $ cd /path/to/hw00
-    $ stack ghci
-    Configuring GHCi with the following packages: gcj, hw00
-    [...]
-    *Main GCJ HW00
-    > greeting
-    hello, world!
+```bash
+$ cd /path/to/hw00
+$ stack ghci
+Configuring GHCi with the following packages: gcj, hw00
+[...]
+*Main GCJ HW00
+> greeting
+hello, world!
+```
 
 * Compile your code and test it on the sample input:
 
-    $ cd /path/to/hw00
-    $ stack build
-    Configuring GHCi with the following packages: gcj, hw00
-    [...]
-    $ ../bin/check.sh hello
+```bash
+$ cd /path/to/hw00
+$ stack build
+Configuring GHCi with the following packages: gcj, hw00
+[...]
+$ ../bin/check.sh hello
+```
