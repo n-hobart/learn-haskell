@@ -22,15 +22,12 @@ personally mentoring you, here's what you need to do:
 machine](https://help.github.com/articles/cloning-a-repository/).
 Be sure to clone *your* fork, not this repo!
 
-        ```
         $ git clone https://github.com/YOUR-GITHUB-NAME/learn-haskell.git
-        ```
+
 1. [Add a new `upstream` remote](https://help.github.com/articles/adding-a-remote/).
 This will be used to [stay current](#staying-current) with new material as it appears.
 
-        ```
         $ git remote add upstream https://github.com/instinctive/learn-haskell.git
-        ```
 
 If you don't know `git`, here are some good resources:
 * [GitHub Guides](https://guides.github.com/)
