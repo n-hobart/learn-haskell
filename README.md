@@ -7,7 +7,7 @@ Haskellers out there to help!
 
 # Lessons
 
-* [Prelude](#getting-started) Set up `git` and your repos.
+* [Getting Started](#getting-started): Set up `git` and your repos.
 * [Lesson 00](hw00): Make sure the moving parts are moving.
 
 # Getting Started
