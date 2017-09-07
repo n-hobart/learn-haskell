@@ -19,15 +19,16 @@ personally mentoring you, here's what you need to do:
 1. [Create a GitHub account](github.com/join) (if you don't already have one).
 1. [Fork this repo](https://guides.github.com/activities/forking/).
 1. [Clone your fork on your local
-   machine](https://help.github.com/articles/cloning-a-repository/).
-   Be sure to clone *your* fork, not this repo!
-```
-$ git clone https://github.com/YOUR-GITHUB-NAME/learn-haskell.git
-```
+machine](https://help.github.com/articles/cloning-a-repository/).
+Be sure to clone *your* fork, not this repo!
+        ```
+        $ git clone https://github.com/YOUR-GITHUB-NAME/learn-haskell.git
+        ```
 1. [Add a new `upstream` remote](https://help.github.com/articles/adding-a-remote/).
-```
-$ git remote add upstream https://github.com/instinctive/learn-haskell.git
-```
+This will be used to [stay current](#staying-current) with new material as it appears.
+        ```
+        $ git remote add upstream https://github.com/instinctive/learn-haskell.git
+        ```
 
 If you don't know `git`, here are some good resources:
 * [GitHub Guides](https://guides.github.com/)
