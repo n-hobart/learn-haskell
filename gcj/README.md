@@ -11,5 +11,5 @@ read an initial count **T**, the number of test cases, and then run
 the supplied `IO ()` action that many times. For each such case, the
 function outputs the text: `Case #x: ` (with a trailing space).
 
-The `gcjLn` function outputs and additional newline character, for
+The `gcjLn` function outputs an additional newline character, for
 problems which require it.
