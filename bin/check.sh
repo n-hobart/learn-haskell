@@ -1,4 +1,12 @@
 #!/bin/bash
+#
+# $ cd /path/to/hwXX
+# $ stack build
+# $ ../bin/check.sh <name>
+#
+# This runs the <name>-exe executable on the file data/<name>.in,
+# takes the SHA-256 checksum of the output, and compares it to the
+# checksum of the correct answer, stored in data/<name>.out.sha256
 
 NAME=${1}
 
