@@ -1,6 +1,6 @@
 # HW00 - Getting Started
 
-* Read Chapter 1 of the [Haskell Book](haskellbook.com).
+* Read Chapters 1 and 2 of the [Haskell Book](haskellbook.com).
 * Install [`haskell stack`](https://docs.haskellstack.org/en/stable/README/)
 * Edit the Haskell file `hw00/src/HW00.sh`.
     * You will see that `greeting` is `undefined`.
