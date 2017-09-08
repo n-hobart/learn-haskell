@@ -1,6 +1,6 @@
 module GCJ where
 
-import Data.Foldable
+import Data.Foldable (for_)
 
 gcj :: IO () -> IO ()
 gcj go = do
