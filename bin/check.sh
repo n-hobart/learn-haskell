@@ -15,6 +15,8 @@ if [ "${UNAME}" == "Darwin" ]; then
     SHAPROG="shasum -a 256"
 elif [ "${UNAME}" == "Linux" ]; then
     SHAPROG="sha256sum"
+elif [[ ${UNAME} == MINGW* ]]; then
+    SHAPROG="sha256sum | dos2unix"
 else
     echo "Unknown UNAME: ${UNAME}"
     exit 1
