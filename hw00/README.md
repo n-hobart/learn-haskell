@@ -2,6 +2,12 @@
 
 * Read Chapters 1 and 2 of the [Haskell Book](haskellbook.com).
 * Install [`haskell stack`](https://docs.haskellstack.org/en/stable/README/)
+* Run the following command to setup Haskell. If your shell can't find `stack`,
+  restart your shell and try again. (This command is doing a global setup of
+  `stack`, so it does not need to be run in any specific project's directory.)
+
+        $ stack setup
+
 * Edit the Haskell file `hw00/src/HW00.sh`.
     * You will see that `greeting` is `undefined`.
     * Change it to print `hello, world!` with a trailing newline.
