@@ -9,7 +9,7 @@
 # checksum of the correct answer, stored in data/<name>.out.sha256
 
 NAME=${1}
-if [ -e ${NAME} ]; then
+if [ -z ${NAME} ]; then
     echo "Usage: $0 <name>"
     exit 1
 fi
@@ -29,12 +29,5 @@ else
 fi
 
 stack exec ${NAME}-exe < data/${NAME}.in \
-    | ${SHAPROG} \
     | ${CONVERT} \
-    | diff - data/${NAME}.out.sha256
-
-if [ $? -eq 0 ]; then
-    echo "Correct."
-else
-    echo "Not correct."
-fi
+    | ${SHAPROG} -c data/${NAME}.out.sha256
