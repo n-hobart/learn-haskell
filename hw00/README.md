@@ -32,7 +32,7 @@ $ stack build
 Configuring GHCi with the following packages: gcj, hw00
 [...]
 $ ../bin/check.sh hello
-Correct.
+-: OK
 ```
 
 **Beneath the Hood**
