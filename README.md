@@ -16,7 +16,7 @@ You're welcome to use this repo in any way you like, but if I'm
 personally mentoring you, here's what you need to do:
 
 1. [Install `git` on your local machine](https://git-scm.com/downloads).
-1. [Create a GitHub account](github.com/join) (if you don't already have one).
+1. [Create a GitHub account](https://github.com/join) (if you don't already have one).
 1. [Fork this repo](https://guides.github.com/activities/forking/).
 1. [Clone your fork on your local
 machine](https://help.github.com/articles/cloning-a-repository/).
@@ -24,9 +24,17 @@ Be sure to clone *your* fork, not this repo!
 
         $ git clone https://github.com/YOUR-GITHUB-NAME/learn-haskell.git
 
+    Trying this on Windows, I received:
+
+        fatal: I don't handle protocol 'https'
+
+    This turned out to be a non-printing character between `git clone` and the
+    url, which must have been introduced by a bad copy-paste. Retype it.
+
 1. [Add a new `upstream` remote](https://help.github.com/articles/adding-a-remote/).
 This will be used to [stay current](#staying-current) with new material as it appears.
 
+        $ cd learn-haskell
         $ git remote add upstream https://github.com/instinctive/learn-haskell.git
 
 If you don't know `git`, here are some good resources:
