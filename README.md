@@ -21,15 +21,9 @@ personally mentoring you, here's what you need to do:
 1. [Clone your fork on your local
 machine](https://help.github.com/articles/cloning-a-repository/).
 Be sure to clone *your* fork, not this repo!
+[(Troubleshooting)](#troubleshooting)
 
         $ git clone https://github.com/YOUR-GITHUB-NAME/learn-haskell.git
-
-    Trying this on Windows, I received:
-
-        fatal: I don't handle protocol 'https'
-
-    This turned out to be a non-printing character between `git clone` and the
-    url, which must have been introduced by a bad copy-paste. Retype it.
 
 1. [Add a new `upstream` remote](https://help.github.com/articles/adding-a-remote/).
 This will be used to [stay current](#staying-current) with new material as it appears.
@@ -55,3 +49,13 @@ You will use the `upstream` remote whenever new material is added to this repo:
 
     $ cd /path/to/learn-haskell
     $ git pull upstream master
+
+# Troubleshooting
+
+Trying `git clone <url>` on Windows, I received:
+
+    fatal: I don't handle protocol 'https'
+
+This turned out to be a non-printing character between `git clone` and the
+url, which must have been introduced by a bad copy-paste. I deleted that
+part of the command line and retyped it.
