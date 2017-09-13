@@ -8,7 +8,8 @@ Haskellers out there to help!
 # Lessons
 
 * [Getting Started](#getting-started): Set up `git` and your repos.
-* [Lesson 00](hw00): Make sure the moving parts are moving.
+* [Unit 00](hw00): Make sure the moving parts are moving.
+* [Unit 01](hw01): Numbers, lists, basic functions.
 
 # Getting Started
 
