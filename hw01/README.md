@@ -10,7 +10,7 @@ Brent Yorgey's [CIS 194 Homework
 * Do Exercises 1-4 from the first two pages of Brent's [CIS 194 Homework
   1](http://www.cis.upenn.edu/~cis194/spring13/hw/01-intro.pdf).
   
-  We will do the *Tower of Hanoi* problems (Exercises 5-6) later.
+  (We will do the *Tower of Hanoi* problems (Exercises 5-6) later.)
 
   *Warning:* These exercises kinda jump in the deep end with respect to lists.
   Check the CIS 194 Lecture Notes, and ask questions if you're confused.
@@ -23,9 +23,9 @@ Brent Yorgey's [CIS 194 Homework
         null :: [a] -> Bool   -- return true if the list is empty
         reverse :: [a] -> [a] -- reverse the order of a list
 
-        -- function that does something to a list:
-        -- successive definitions for the same function are tried in order
-        foo []  = undefined    -- the list is empty
+        -- Here we define a function that does something to a list:
+        -- (note that successive definitions will be tried in order)
+        foo []     = undefined -- the list is empty
         foo (x:yy) = undefined -- the list has at least one element
                                -- that element is labeled 'x' in the right hand side
                                -- the rest of the list (which might be empty) is labeled 'yy'
