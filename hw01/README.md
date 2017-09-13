@@ -38,8 +38,8 @@ Brent Yorgey's [CIS 194 Homework
             [...]
             > toDigits 1234
             [1,2,3,4]
-	    > toDigits 0
-	    []
+            > toDigits 0
+            []
             > toDigits (-17)
             []
             > doubleEveryOther [8,7,6,5]
