@@ -40,18 +40,18 @@ Brent Yorgey's [CIS 194 Homework
             [1,2,3,4]
 	    > toDigits 0
 	    []
-	    > toDigits (-17)
-	    []
-	    > doubleEveryOther [8,7,6,5]
-	    [16,7,12,5]
-	    > doubleEveryOther [1,2,3]
-	    [1,4,3]
-	    > sumDigits [16,7,12,5]
-	    22
-	    > validate 4012888888881881
-	    True
-	    > validate 4012888888881882
-	    False
+            > toDigits (-17)
+            []
+            > doubleEveryOther [8,7,6,5]
+            [16,7,12,5]
+            > doubleEveryOther [1,2,3]
+            [1,4,3]
+            > sumDigits [16,7,12,5]
+            22
+            > validate 4012888888881881
+            True
+            > validate 4012888888881882
+            False
 
     * When you are confident you have figured everything else, you can test
       your solution against the sample data:
