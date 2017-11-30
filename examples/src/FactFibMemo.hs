@@ -58,6 +58,13 @@ fact' _ n | n < 0 = errorNegative
 fact' _ n | n < 2 = 1
 fact' f n = undefined
 
+-- | Just to check that you do understand what's going on:
+--
+-- >>> yesToFact
+-- True
+yesToFact :: Bool
+yesToFact = undefined -- just fill this in with True
+
 -- * Fibonacci
 
 -- | Fibonacci is notorious, in that it takes a long time to compute. Define
@@ -109,4 +116,4 @@ memo f = (map f [0..] !!)
 -- >>> yesToMemo
 -- True
 yesToMemo :: Bool
-yesToMemo = undefined
+yesToMemo = undefined -- just fill this in with True
