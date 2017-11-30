@@ -18,7 +18,7 @@ class Applicative f =&gt; Monad f where
  <code>Functor</code>.</p><p>For pedagogy, I am using the operator version of <code>fmap</code>, and the flipped version of the usual &quot;bind&quot; operator.</p><pre>(&lt;$&gt;) = fmap
 (=&lt;&lt;) = flip (&gt;&gt;=)</pre><p>This is just to use the most similar versions of all these operators. In
  actual code, you are free to use whichever version makes sense. For example:</p><pre>getCaps :: IO [String]
-getCaps = fmap toUpper . words &lt;$&gt; getLine</pre><p>This hypothetical code uses both fragment uses both versions of <code>fmap</code>,
+getCaps = fmap toUpper . words &lt;$&gt; getLine</pre><p>This hypothetical code fragment uses both versions of <code>fmap</code>,
  because it seems convenient to do so.</p></div><h2 id="g:2"><code>pure</code> and <code>return</code></h2><div class="doc"><p>The first thing to note is that <code>pure</code> and <code>return</code> are identical. If you
  examine
  <a href="https://hackage.haskell.org/package/base-4.10.0.0/docs/src/GHC.Base.html">the source</a>,
@@ -29,7 +29,9 @@ getCaps = fmap toUpper . words &lt;$&gt; getLine</pre><p>This hypothetical code 
 </pre><p>Why would you write <code>pure 5</code> rather than <code>Just 5</code>? Well, suppose you
  anticipated that your applicative or monadic type might change in the
  future... if you use <code>pure</code> you future-proof yourself. <code>pure</code> says, &quot;inject
- this value into the appropriate context, whatever that is.&quot;</p></div><h2 id="g:3"><code>fmap</code>, <code>&lt;*&gt;</code>, and <code>=&lt;&lt;</code></h2><div class="doc"><p>Let's gather the signatures of the operators together:</p><pre>  (&lt;$&gt;) ::   (a -&gt;   b) -&gt; f a -&gt; f b  -- Functor
+ this value into the appropriate context, whatever that is.&quot;</p><p>In industrial strength Haskell applications, the context can be very
+ involved, and having to reassemble it yourself just to inject a value into
+ that context can be tedious at best!</p></div><h2 id="g:3"><code>fmap</code>, <code>&lt;*&gt;</code>, and <code>=&lt;&lt;</code></h2><div class="doc"><p>Let's gather the signatures of the operators together:</p><pre>  (&lt;$&gt;) ::   (a -&gt;   b) -&gt; f a -&gt; f b  -- Functor
   (&lt;*&gt;) :: f (a -&gt;   b) -&gt; f a -&gt; f b  -- Applicative
   (=&lt;&lt;) ::   (a -&gt; f b) -&gt; f a -&gt; f b  -- Monad</pre><p>First, observe the obvious similarity between these signatures. They vary
  only in the presence, absence, and position of the <code>f</code> type in the first
@@ -40,12 +42,12 @@ getCaps = fmap toUpper . words &lt;$&gt; getLine</pre><p>This hypothetical code 
 </code></strong>Just 5
 <code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>Just . (+3) =&lt;&lt; Just 2  -- Monad
 </code></strong>Just 5
-</pre><p>(I'm using <code>id</code> just to keep the text aligned: <code>id (+3) == (+3)</code>.)</p><p>Note that these example constructions exactly follow the above signatures.</p><ul><li>The <code>Functor</code> example says, &quot;apply this function to what's inside the
+</pre><p>I'm using <code>id</code> just to keep the text aligned: <code>id (+4) == (+3)</code>.</p><p>Note that these example constructions exactly follow the above signatures.</p><ul><li>The <code>Functor</code> example says, &quot;apply this function to what's inside the
    <code>f</code> context, and return the same context with the result.&quot;</li><li>The <code>Applicative</code> example says, &quot;within the <code>f</code> context, apply the
    function to the argument, combining the contexts.&quot;</li><li>The <code>Monad</code> example says, &quot;apply the function to what's inside the <code>f</code>
    context, then create a new <code>f</code> context to hold the result, combining the
    new context with the input context.&quot;</li></ul><p>Notice that <code>Applicative</code> and <code>Monad</code> refer to <em>combining</em> the contexts.
- (<code>Functor</code> does not, because there is only the original context.)</p><p>That combinining is pretty simple in the case of <code>Maybe</code>: if both contexts
+ (<code>Functor</code> does not, because there is only the original context.)</p><p>That combining is pretty simple in the case of <code>Maybe</code>: if both contexts
  are <code>Just</code>, the combined context is <code>Just</code>. Otherwise, if either or both of
  the contexts is <code>Nothing</code>, the combined context is <code>Nothing</code>.</p><p>For a more complicated example, and to better exhibit the structural, or
  contextual nature of $f$ let's use the tuple type, <code>(a,)</code>. The tuple type
@@ -55,7 +57,7 @@ getCaps = fmap toUpper . words &lt;$&gt; getLine</pre><p>This hypothetical code 
 </code></strong>(&quot;bananaapple&quot;,5)
 <code class="prompt">&gt;&gt;&gt; </code><strong class="userinput"><code>(,) &quot;cherry&quot; . (+3)  =&lt;&lt; (&quot;apple&quot;, 2)  -- Monad
 </code></strong>(&quot;applecherry&quot;,5)
-</pre><p>(I'm using <code>id</code> just to keep the text aligned: <code>id (+3) == (+3)</code>.)</p><p>The tuple type is carrying some context, <code>&quot;apple&quot;</code> in this case, in its
+</pre><p>I'm using <code>id</code> just to keep the text aligned: <code>id (+3) == (+3)</code>.</p><p>The tuple type is carrying some context, <code>&quot;apple&quot;</code> in this case, in its
  first element. For <code>Applicative</code> and <code>Monad</code>, they combine the contexts by
  appending the strings. Indeed, if you 
  <a href="https://hackage.haskell.org/package/base-4.10.0.0/docs/src/GHC.Base.html#line-338">check the documentation</a>,

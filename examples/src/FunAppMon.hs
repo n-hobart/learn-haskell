@@ -37,7 +37,7 @@ import BasePrelude
 -- > getCaps :: IO [String]
 -- > getCaps = fmap toUpper . words <$> getLine
 --
--- This hypothetical code uses both fragment uses both versions of @fmap@,
+-- This hypothetical code fragment uses both versions of @fmap@,
 -- because it seems convenient to do so.
 
 -- ** @pure@ and @return@
@@ -60,6 +60,10 @@ import BasePrelude
 -- anticipated that your applicative or monadic type might change in the
 -- future... if you use @pure@ you future-proof yourself. @pure@ says, "inject
 -- this value into the appropriate context, whatever that is."
+--
+-- In industrial strength Haskell applications, the context can be very
+-- involved, and having to reassemble it yourself just to inject a value into
+-- that context can be tedious at best!
 
 -- ** @fmap@, @\<*\>@, and @=<<@
 
@@ -85,7 +89,7 @@ import BasePrelude
 -- >>> Just . (+3) =<< Just 2  -- Monad
 -- Just 5
 --
--- (I'm using @id@ just to keep the text aligned: @id (+3) == (+3)@.)
+-- I'm using @id@ just to keep the text aligned: @id (+4) == (+3)@.
 --
 -- Note that these example constructions exactly follow the above signatures.
 --
@@ -102,7 +106,7 @@ import BasePrelude
 -- Notice that @Applicative@ and @Monad@ refer to /combining/ the contexts.
 -- (@Functor@ does not, because there is only the original context.)
 --
--- That combinining is pretty simple in the case of @Maybe@: if both contexts
+-- That combining is pretty simple in the case of @Maybe@: if both contexts
 -- are @Just@, the combined context is @Just@. Otherwise, if either or both of
 -- the contexts is @Nothing@, the combined context is @Nothing@.
 --
@@ -117,7 +121,7 @@ import BasePrelude
 -- >>> (,) "cherry" . (+3)  =<< ("apple", 2)  -- Monad
 -- ("applecherry",5)
 --
--- (I'm using @id@ just to keep the text aligned: @id (+3) == (+3)@.)
+-- I'm using @id@ just to keep the text aligned: @id (+3) == (+3)@.
 --
 -- The tuple type is carrying some context, @"apple"@ in this case, in its
 -- first element. For @Applicative@ and @Monad@, they combine the contexts by
