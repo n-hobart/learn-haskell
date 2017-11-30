@@ -89,7 +89,7 @@ import BasePrelude
 -- >>> Just . (+3) =<< Just 2  -- Monad
 -- Just 5
 --
--- I'm using @id@ just to keep the text aligned: @id (+4) == (+3)@.
+-- I'm using @id@ just to keep the text aligned: @id (+3) == (+3)@.
 --
 -- Note that these example constructions exactly follow the above signatures.
 --
@@ -111,7 +111,7 @@ import BasePrelude
 -- the contexts is @Nothing@, the combined context is @Nothing@.
 --
 -- For a more complicated example, and to better exhibit the structural, or
--- contextual nature of $f$ let's use the tuple type, @(a,)@. The tuple type
+-- contextual nature of @f@ let's use the tuple type, @(a,)@. The tuple type
 -- carries extra information with it in its first element.
 --
 -- >>> id             (+3)  <$> ("apple", 2)  -- Functor
