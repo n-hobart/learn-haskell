@@ -2,7 +2,7 @@
 
 This project contains some examples to check your understanding.
 
-* [src/FactFibMemo.hs](https://instinctive.github.io/learn-haskell/docs/examples/FactFibMemo.html): Some problems in recursion and an example of memoization.
+* [src/FactFibMemo.hs](https://instinctive.github.io/learn-haskell/docs/examples/FactFibMemo.html): Some problems in recursion and an example of memoization. Click through the link to see a nicely-formatted version of the file's comments.
 
 You can test your solutions to the problems by running:
 
